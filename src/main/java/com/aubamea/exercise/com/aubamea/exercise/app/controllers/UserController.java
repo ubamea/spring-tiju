@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/user")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/user")
 public class UserController {
 
     private final IUserService userService;
+
 
     @GetMapping()
     public ResponseEntity<?>findUsers(){
