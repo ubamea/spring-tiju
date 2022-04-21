@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
@@ -22,11 +20,8 @@ jobs:
           java-version: '1.8'
           distribution: 'adopt'
           cache: maven
-    - name: Build with Maven
-      run: mvn clean install
-
-    - name: login to dockerimage
-      run: cmd
+      - name: Build with Maven
+        run: mvn clean install
 
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
