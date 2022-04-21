@@ -25,4 +25,22 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
+    - name: login to dockerimage
+      run: cmd
+
+    - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: ubamea/spring-boot96
+        tags: latest
+        registry: docker.io
+        dockerfile: Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+
+      1.- login to your dockerhub
+      2.- build docker image
+      3.- push taht image to docker hub
+
 

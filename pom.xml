@@ -71,6 +71,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>spring-boot96</finalName>
 	</build>
 
 </project>
